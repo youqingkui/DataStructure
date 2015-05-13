@@ -11,6 +11,18 @@
       this.dequeue = function() {
         return this.dataStore.shift();
       };
+      this.firstDequeue = function() {
+        var entry, k, v, _i, _len, _ref;
+        entry = 0;
+        _ref = this.dataStore;
+        for (k = _i = 0, _len = _ref.length; _i < _len; k = ++_i) {
+          v = _ref[k];
+          if (v.code < this.dataStore[entry].code) {
+            entry = k;
+          }
+        }
+        return this.dataStore.splice(entry, 1);
+      };
       this.front = function() {
         return this.dataStore[0];
       };
@@ -24,6 +36,16 @@
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           i = _ref[_i];
           retStr += i + '\n';
+        }
+        return retStr;
+      };
+      this.toString2 = function() {
+        var i, retStr, _i, _len, _ref;
+        retStr = "";
+        _ref = this.dataStore;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          i = _ref[_i];
+          retStr += i.name + " code: " + i.code + "\n";
         }
         return retStr;
       };

@@ -10,6 +10,15 @@ class Queue
       @dataStore.shift()
 
 
+    @firstDequeue = () ->
+      entry = 0
+      for v, k in @dataStore
+        if v.code < @dataStore[entry].code
+          entry = k
+
+      @dataStore.splice(entry, 1)
+
+
     @front = () ->
       @dataStore[0]
 
@@ -22,6 +31,15 @@ class Queue
       retStr = ""
       for i in @dataStore
         retStr += i + '\n'
+
+      return retStr
+
+
+    @toString2 = () ->
+      retStr = ""
+      for i in @dataStore
+        retStr += i.name + " code: " + i.code + "\n"
+
 
       return retStr
 
