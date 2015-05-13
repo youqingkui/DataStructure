@@ -33,6 +33,9 @@
         }
         return false;
       };
+      this.count = function() {
+        return this.dataStore.length;
+      };
     }
 
     return Queue;

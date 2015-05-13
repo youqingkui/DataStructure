@@ -34,5 +34,10 @@ class Queue
       return false
 
 
+    @count = () ->
+      @dataStore.length
+
+
+
 module.exports = Queue
 
