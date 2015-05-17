@@ -97,9 +97,15 @@
 
   cities.display();
 
+  console.log("");
+
   cities.remove("Carlisle");
 
   cities.display();
+
+  console.log("");
+
+  cities.dispReverse();
 
 }).call(this);
 

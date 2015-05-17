@@ -80,7 +80,7 @@ class LList
 
 
 
-var cities = new LList();
+cities = new LList();
 cities.insert("Conway", "head");
 cities.insert("Russellville", "Conway");
 cities.insert("Carlisle", "Russellville");
