@@ -15,8 +15,16 @@ class Dictionary
       return
 
     @showAll = () ->
+      console.log @datastore.sort()
       for k, v of @datastore
         console.log k + " -> " + v
+
+
+    @showAll2 = () ->
+      Object.keys(this.datastore).sort().forEach (key) ->
+        console.log key + " -> " + this.datastore[key]
+
+      ,@
 
     @count = () ->
       n = 0

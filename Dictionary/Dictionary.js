@@ -16,6 +16,7 @@
       };
       this.showAll = function() {
         var k, v, _ref, _results;
+        console.log(this.datastore.sort());
         _ref = this.datastore;
         _results = [];
         for (k in _ref) {
@@ -23,6 +24,11 @@
           _results.push(console.log(k + " -> " + v));
         }
         return _results;
+      };
+      this.showAll2 = function() {
+        return Object.keys(this.datastore).sort().forEach(function(key) {
+          return console.log(key + " -> " + this.datastore[key]);
+        }, this);
       };
       this.count = function() {
         var k, n;

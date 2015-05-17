@@ -9,6 +9,7 @@ console.log("David's extension: " + pbook.find("David"))
 console.log "Number of entries: " + pbook.count()
 pbook.remove("David")
 pbook.showAll()
+pbook.showAll2()
 pbook.clear()
 console.log "Number of entries: " + pbook.count()
 

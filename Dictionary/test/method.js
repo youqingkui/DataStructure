@@ -20,6 +20,8 @@
 
   pbook.showAll();
 
+  pbook.showAll2();
+
   pbook.clear();
 
   console.log("Number of entries: " + pbook.count());
