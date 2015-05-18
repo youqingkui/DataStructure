@@ -24,11 +24,61 @@
           return false;
         }
       };
-      this.size = function() {};
-      this.union = function() {};
-      this.intersect = function() {};
-      this.subset = function() {};
+      this.size = function() {
+        return this.dataStore.length;
+      };
+      this.union = function(set) {
+        var i, tempSet, _i, _j, _len, _len1, _ref, _ref1;
+        tempSet = new Set();
+        _ref = this.dataStore;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          i = _ref[_i];
+          tempSet.add(i);
+        }
+        _ref1 = set.dataStore;
+        for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+          i = _ref1[_j];
+          if (!(tempSet.contains(i))) {
+            tempSet.dataStore.push(i);
+          }
+        }
+        return tempSet;
+      };
+      this.intersect = function(set) {
+        var i, tmpSet, _i, _len, _ref;
+        tmpSet = new Set();
+        _ref = this.dataStore;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          i = _ref[_i];
+          if (set.contains(i)) {
+            tmpSet.add(i);
+          }
+        }
+        return tmpSet;
+      };
+      this.subset = function(set) {
+        var i, _i, _len, _ref;
+        if (this.size() > set.size()) {
+          return false;
+        } else {
+          _ref = this.dataStore;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            i = _ref[_i];
+            if (!(set.contains(i))) {
+              return false;
+            }
+          }
+          return true;
+        }
+      };
       this.difference = function() {};
+      this.contains = function(data) {
+        if (__indexOf.call(this.dataStore, data) >= 0) {
+          return true;
+        } else {
+          return false;
+        }
+      };
       this.show = function() {
         return this.dataStore;
       };
