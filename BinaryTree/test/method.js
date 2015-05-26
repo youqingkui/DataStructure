@@ -50,7 +50,9 @@
     }
   };
 
-  preOrder(nums.root);
+  console.log(nums.getMin());
+
+  console.log(nums.getMax());
 
 }).call(this);
 

@@ -35,6 +35,40 @@ class BST
               break
 
 
+    @getMin = () ->
+      current = @.root
+      while current.left isnt null
+        current = current.left
+
+      current.data
+
+
+    @getMax = () ->
+      current = @.root
+      while current.right isnt null
+        current = current.right
+
+
+      current.data
+
+
+    @find = (data) ->
+      current = @.root
+      while current isnt null
+        if current.data is data
+          return current
+
+        else if data < current.data
+          current = current.left
+        else
+          current = current.right
+
+
+      return null
+
+
+
+
 
 
 module.exports = BST

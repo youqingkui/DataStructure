@@ -32,6 +32,9 @@ postOrder = (node) ->
     postOrder(node.right)
     console.log node.show()
 
-    
 
-preOrder(nums.root)
+console.log nums.getMin()
+
+console.log nums.getMax()
+
+#preOrder(nums.root)
