@@ -18,4 +18,20 @@ inOrder = (node) ->
     console.log node.show()
     inOrder(node.right)
 
-inOrder(nums.root)
+
+preOrder = (node) ->
+  if node isnt null
+    console.log node.show()
+    preOrder(node.left)
+    preOrder(node.right)
+
+
+postOrder = (node) ->
+  if node isnt null
+    postOrder(node.left)
+    postOrder(node.right)
+    console.log node.show()
+
+    
+
+preOrder(nums.root)
