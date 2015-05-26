@@ -51,18 +51,13 @@
           return _results;
         }
       };
-      this.inOrder = function(node) {
-        if (node !== null) {
-          this.inOrder(node.left);
-          console.log(node.show());
-          return inOrder(node.right);
-        }
-      };
     }
 
     return BST;
 
   })();
+
+  module.exports = BST;
 
 }).call(this);
 

@@ -35,9 +35,7 @@ class BST
               break
 
 
-    @inOrder = (node) ->
-      if node isnt null
-        @inOrder(node.left)
-        console.log node.show()
-        inOrder(node.right)
+
+
+module.exports = BST
 
