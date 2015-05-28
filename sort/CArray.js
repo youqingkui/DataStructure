@@ -78,17 +78,38 @@
       return _results;
     };
 
+    CArray.prototype.selectionSort = function() {
+      var inner, min, outer, _results;
+      outer = 0;
+      _results = [];
+      while (outer <= this.dataStore.length - 2) {
+        min = outer;
+        inner = outer + 1;
+        while (inner < this.dataStore.length - 1) {
+          if (this.dataStore[inner] < this.dataStore[min]) {
+            min = inner;
+          }
+          this.swap(this.dataStore, outer, min);
+          inner++;
+        }
+        _results.push(outer++);
+      }
+      return _results;
+    };
+
     return CArray;
 
   })();
 
-  numElements = 4;
+  numElements = 10;
 
   myNums = new CArray(numElements);
 
   myNums.setData();
 
-  myNums.bubbleSort();
+  console.log(myNums.toString());
+
+  myNums.selectionSort();
 
   console.log(myNums.toString());
 

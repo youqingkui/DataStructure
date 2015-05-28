@@ -57,9 +57,28 @@ class CArray
       outer--
 
 
-numElements = 4
+  selectionSort: ->
+    outer = 0
+    while outer <= @dataStore.length - 2
+      min = outer
+      inner = outer + 1
+      while inner < @dataStore.length - 1
+        if @dataStore[inner] < @dataStore[min]
+          min = inner
+        @swap(@dataStore, outer, min)
+
+        inner++
+
+      outer++
+
+
+
+
+
+numElements = 10
 myNums = new CArray(numElements)
 myNums.setData()
-myNums.bubbleSort()
+console.log myNums.toString()
+myNums.selectionSort()
 console.log myNums.toString()
 
