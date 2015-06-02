@@ -67,31 +67,31 @@
       _results = [];
       while (outer >= 2) {
         inner = 0;
-        while (inner <= outer - 1) {
+        while (inner < outer - 1) {
           if (this.dataStore[inner] > this.dataStore[inner + 1]) {
             this.swap(this.dataStore, inner, inner + 1);
           }
           inner++;
         }
+        console.log(myNums.toString());
         _results.push(outer--);
       }
       return _results;
     };
 
     CArray.prototype.selectionSort = function() {
-      var inner, min, outer, _results;
+      var inner, outer, _results;
       outer = 0;
       _results = [];
       while (outer <= this.dataStore.length - 2) {
-        min = outer;
         inner = outer + 1;
-        while (inner < this.dataStore.length - 1) {
-          if (this.dataStore[inner] < this.dataStore[min]) {
-            min = inner;
+        while (inner <= this.dataStore.length - 1) {
+          if (this.dataStore[inner] < this.dataStore[outer]) {
+            this.swap(this.dataStore, outer, inner);
           }
-          this.swap(this.dataStore, outer, min);
           inner++;
         }
+        console.log(myNums.toString());
         _results.push(outer++);
       }
       return _results;

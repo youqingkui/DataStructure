@@ -48,11 +48,13 @@ class CArray
     outer = numElements
     while outer >= 2
       inner = 0
-      while inner <= outer - 1
+      while inner < outer - 1
         if @dataStore[inner] > @dataStore[inner + 1]
           @swap(@dataStore, inner, inner + 1)
 
         inner++
+
+      console.log myNums.toString()
 
       outer--
 
@@ -60,14 +62,16 @@ class CArray
   selectionSort: ->
     outer = 0
     while outer <= @dataStore.length - 2
-      min = outer
       inner = outer + 1
-      while inner < @dataStore.length - 1
-        if @dataStore[inner] < @dataStore[min]
-          min = inner
-        @swap(@dataStore, outer, min)
+      while inner <= @dataStore.length - 1
+        if @dataStore[inner] < @dataStore[outer]
+          @swap(@dataStore, outer, inner)
 
         inner++
+
+      console.log myNums.toString()
+
+
 
       outer++
 
